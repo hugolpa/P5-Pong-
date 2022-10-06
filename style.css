@@ -1,7 +1,67 @@
-html, body {
+@import "compass/css3";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+/**
+ * Playable Pong *
+*/
+
+$speed: 1.5; /* 1=fast 10=slow*/
+$updown-speed:(1.9s*$speed);
+$leftright-speed:(2.7s*$speed);
+  
+html{
+  align-items: center;
+}
+
+body {
+  
+  font-family: 'Montserrat Alternates', sans-serif;
+  background: #000;
   margin: 0;
   padding: 0;
+  color: #0f0;
+  text-align: center;
+  text-transform: uppercase;
+   }
+
+body:before { /* scanline effect - full screen */
+  content: "";
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(transparent 50%, rgba(0, 40, 40, 0.25) 50%);
+  background-size: 100% 4px;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  pointer-events: none;
+  top: 0;
+  left: 0; }
+
+body * { /* blur glow */
+  text-shadow: 0px 0px 3px rgba(90, 255, 90, 0.9), 0px 0px 3px rgba(90, 255, 90, 0.9), 0px 0px 7px rgba(90, 255, 90, 0.9); }
+
+h1 {
+  text-align: center;
+  font: 400 20px 'Impact';
+  letter-spacing: 5px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  line-height: 1em;
+  color: #0afa0a;
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 0px 0px 0 #35bb35, 0px 1px 0 #47a947, 0px 2px 0 #589858, 0px 3px 0 #6a866a, 0px 4px 0 #7b757b, 0px 5px 0 #8c648c, 0px 6px 5px rgba(0, 0, 0, 0.25), 0px 6px 1px rgba(0, 0, 0, 0.5), 0px 0px 5px rgba(0, 0, 0, 0.2); }
+
+p {
+  text-align: center;
+  font: 400 16px''; 
+font-family: 'Montserrat Alternates', sans-serif;
 }
-canvas {
-  display: block;
-}
+
+
+
+
+
+
+
+

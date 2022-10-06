@@ -32,6 +32,7 @@ let pontosOponente = 0;
 let raquetada;
 let ponto;
 let trilha; 
+let todosOsSons = [raquetada,trilha,ponto]
 
 function preload() {
   
@@ -43,7 +44,13 @@ function preload() {
 
 function setup() {
   createCanvas(600,400);
-  trilha.loop(); //loop é utilizado para deixar a música tocando sempre.
+   
+  noLoop();
+  //loop é utilizado para deixar a música tocando sempre.
+  trilha.loop();
+}
+function mousePressed(){
+  loop();
 }
 
 function mostraBolinha(){
@@ -55,7 +62,7 @@ function mostraRaquete(x,y){
 }
 
 function draw() {
-  background(0);
+  background(10);
   mostraBolinha();
   movimentaBolinha();
   verificaColisaoBorda();
@@ -70,7 +77,8 @@ function draw() {
   marcaPonto();
   bolinhaNaoFicaPresa();
   barraDoMeio();
-  colorBarra();
+  stopTrilha();
+  
 }
 
 
@@ -169,12 +177,14 @@ function barraDoMeio (){
   
   rect(300,0,5,400);
 }
-var ca;
-// barra do meio cor
-function colorBarra() {
-  
-  ca = color(255, 204, 0);
-  fill(ca);
-  rect(300,0,5,400);
-  
+
+
+function stopTrilha(){
+  if (keyIsDown(77)){
+    trilha.stop();
+    
+   }
+   
 }
+
+
